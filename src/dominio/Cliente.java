@@ -7,12 +7,16 @@ public class Cliente implements Comparable<Cliente>{
     private String pasaporte;
     private String nombre;
     private int edad;
-    private ListaSimple<Pasaje> listaPasajes;
+    private ListaSimple<Pasaje> pasajesComprados;
+    private ListaSimple<Pasaje> pasajesDevueltos;
+    
 
     public Cliente(String pasaporte, String nombre, int edad) {
-        this.pasaporte = pasaporte;
-        this.nombre = nombre;
-        this.edad = edad;
+        this.setPasaporte(pasaporte);
+        this.setNombre(nombre);
+        this.setEdad(edad);
+        this.pasajesComprados = new ListaSimple();    
+        this.pasajesDevueltos = new ListaSimple();    
     }
 
     /**
@@ -57,19 +61,13 @@ public class Cliente implements Comparable<Cliente>{
         this.edad = edad;
     }
 
-    /**
-     * @return the listaPasajes
-     */
-    public ListaSimple<Pasaje> getListaPasajes() {
-        return listaPasajes;
+    public ListaSimple<Pasaje> getPasajesComprados() {
+        return pasajesComprados;
+    }
+    public ListaSimple<Pasaje> getPasajesDevueltos() {
+        return pasajesDevueltos;
     }
 
-    /**
-     * @param listaPasajes the listaPasajes to set
-     */
-    public void setListaPasajes(ListaSimple<Pasaje> listaPasajes) {
-        this.listaPasajes = listaPasajes;
-    }
     
     
     @Override
@@ -83,5 +81,9 @@ public class Cliente implements Comparable<Cliente>{
         return this.getPasaporte().compareTo(c.getPasaporte());
     }
     
+    @Override
+    public String toString(){
+        return this.getPasaporte() + "-" + this.getNombre() + "-" + this.getEdad()+"|";
+    }
 
 }

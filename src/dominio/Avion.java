@@ -4,12 +4,12 @@ public class Avion implements Comparable<Avion>{
 
     private String codigo;
     private int capacidadMax;
-    private String nomAeroLinea;
+    private Aerolinea aerolinea;
 
-    public Avion(String codigo, int capacidadMax, String nomAeroLinea) {
-        this.codigo = codigo;
-        this.capacidadMax = capacidadMax;
-        this.nomAeroLinea = nomAeroLinea;
+    public Avion(String codigo, int capacidadMax, Aerolinea aerolinea) {
+        this.setCodigo(codigo);
+        this.setCapacidadMax(capacidadMax);
+        this.setNomAeroLinea(aerolinea);
     }
 
     /**
@@ -43,15 +43,15 @@ public class Avion implements Comparable<Avion>{
     /**
      * @return the nomAeroLinea
      */
-    public String getNomAeroLinea() {
-        return nomAeroLinea;
+    public Aerolinea getNomAeroLinea() {
+        return aerolinea;
     }
 
     /**
      * @param nomAeroLinea the nomAeroLinea to set
      */
-    public void setNomAeroLinea(String nomAeroLinea) {
-        this.nomAeroLinea = nomAeroLinea;
+    public void setNomAeroLinea(Aerolinea aerolinea) {
+        this.aerolinea = aerolinea;
     }
 
     @Override

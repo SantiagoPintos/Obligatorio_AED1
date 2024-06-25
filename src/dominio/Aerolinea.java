@@ -10,9 +10,9 @@ public class Aerolinea implements Comparable<Aerolinea> {
     private ListaSimple<Avion> listaAviones;
 
     public Aerolinea(String nombre, String pais, int cantMaxAviones) {
-        this.nombre = nombre;
-        this.pais = pais;
-        this.cantMaxAviones = cantMaxAviones;
+        this.setNombre(nombre);
+        this.setPais(pais);
+        this.setCantMaxAviones(cantMaxAviones);
         this.listaAviones = new ListaSimple();
     }
 

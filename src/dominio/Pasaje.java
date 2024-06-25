@@ -4,44 +4,63 @@ package dominio;
 
 public class Pasaje implements Comparable<Pasaje> {
     
-    private String pasaporteCliente;
-    private String codigoVuelo;
+    private Cliente cliente;
+    private Vuelo vuelo;
     private int categoriaPasaje;
+    private String estado;
     
-    public Pasaje(String pasaporteCliente, String codigoVuelo, int categoriaPasaje){
-        this.pasaporteCliente = pasaporteCliente;
-        this.codigoVuelo = codigoVuelo;
-        this.categoriaPasaje = categoriaPasaje;           
+    
+    public Pasaje(Cliente cliente, Vuelo vuelo, int categoriaPasaje, String estado){
+        this.setPasaporteCliente(cliente);
+        this.setCodigoVuelo(vuelo);
+        this.setCategoriaPasaje(categoriaPasaje);           
+        this.setEstado(estado);
     }
 
     /**
      * @return the pasaporteCliente
      */
-    public String getPasaporteCliente() {
-        return pasaporteCliente;
+    public Cliente getPasaporteCliente() {
+        return cliente;
     }
 
     /**
      * @param pasaporteCliente the pasaporteCliente to set
      */
-    public void setPasaporteCliente(String pasaporteCliente) {
-        this.pasaporteCliente = pasaporteCliente;
+    public void setPasaporteCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     /**
      * @return the codigoVuelo
      */
-    public String getCodigoVuelo() {
-        return codigoVuelo;
+    public Vuelo getCodigoVuelo() {
+        return vuelo;
     }
 
     /**
      * @param codigoVuelo the codigoVuelo to set
      */
-    public void setCodigoVuelo(String codigoVuelo) {
-        this.codigoVuelo = codigoVuelo;
+    public void setCodigoVuelo(Vuelo vuelo) {
+        this.vuelo = vuelo;
+    }
+/**
+     * @return the codigoVuelo
+     */
+    public String getEstado() {
+        return estado;
     }
 
+    /**
+     * @param estado the codigoVuelo to set
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
+    
+    
     /**
      * @return the categoriaPasaje
      */
@@ -60,7 +79,7 @@ public class Pasaje implements Comparable<Pasaje> {
     @Override
     public boolean equals(Object o){
         Pasaje p = (Pasaje)o;
-        return this.getPasaporteCliente().equalsIgnoreCase(p.getPasaporteCliente()) && this.getCodigoVuelo().equals(p.getCodigoVuelo());
+        return this.getPasaporteCliente().getPasaporte().equalsIgnoreCase(p.getPasaporteCliente().getPasaporte()) && this.getCodigoVuelo().equals(p.getCodigoVuelo());
     }
     
     
@@ -69,8 +88,9 @@ public class Pasaje implements Comparable<Pasaje> {
         return this.getPasaporteCliente().compareTo(p.getPasaporteCliente());
         
     }
-    
-    
-    
-    
+    @Override
+    public String toString(){
+        return this.getCodigoVuelo().getCodigoVuelo();
+    }
+       
 }

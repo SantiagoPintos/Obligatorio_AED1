@@ -122,7 +122,7 @@ public class ListaSimple<T extends Comparable<T>> implements ILista<T> {
     @Override
     public void agregarOrd(T n) {
         Nodo<T> aux = inicio;
-        // Preguntar esto, agregar n.getDato()?????????????????????????
+
         if (esVacia() || inicio.getDato().compareTo(n) >= 0) { // Es el primero
             agregarInicio(n);
         } else {
